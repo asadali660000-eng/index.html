@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arsmeen — A Little Birthday Universe ✨</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#05030d;color:#fff;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}
+canvas{position:fixed;inset:0;z-index:-5}.aurora{position:fixed;inset:-30%;z-index:-4;background:radial-gradient(circle at 50% 35%,#d63d9a20,transparent 28%),radial-gradient(circle at 20% 70%,#6640ff20,transparent 25%);filter:blur(30px);animation:aurora 10s ease-in-out infinite alternate}
+@keyframes aurora{to{transform:rotate(8deg) scale(1.08)}}
+section{min-height:100vh;padding:70px 18px;display:grid;place-items:center}
+.wrap{width:min(900px,94%);text-align:center}.eyebrow{text-transform:uppercase;letter-spacing:5px;font-size:11px;color:#ffb6d6}
+h1{font-size:clamp(45px,12vw,105px);line-height:.9;margin:18px 0;background:linear-gradient(90deg,#fff,#ff9fca,#fff);-webkit-background-clip:text;color:transparent}
+.hero-sub{font-size:18px;color:#d9ccda;line-height:1.7}.date{margin:25px 0;color:#ffb3d2;font-weight:700}
+.btn{padding:14px 22px;border-radius:999px;border:1px solid #ffffff2d;background:#ffffff12;color:#fff;font-weight:700;cursor:pointer;margin:6px;backdrop-filter:blur(10px);transition:.25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px #ff4d9d22}.pink{border:0;background:linear-gradient(90deg,#ff5c9f,#a85dff)}
+.glass{background:#ffffff0b;border:1px solid #ffffff1c;backdrop-filter:blur(18px);border-radius:34px;padding:42px 25px;box-shadow:0 30px 90px #0009}
+.age{font-size:clamp(110px,25vw,210px);font-weight:1000;line-height:.7;color:#ffb5d2;text-shadow:0 0 55px #ff4e9c55}
+.message{max-width:670px;margin:25px auto;font-size:18px;line-height:1.9;color:#eee3eb}
+.reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.reason{padding:22px 12px;border-radius:22px;background:#ffffff09;border:1px solid #ffffff12}
+.reason b{display:block;margin-top:8px;color:#ffd0e3}
+@media(max-width:650px){.reasons{grid-template-columns:1fr}}
+.timeline{max-width:650px;margin:28px auto;text-align:left;display:grid;gap:12px}
+.t{padding:18px 20px;border-left:3px solid #ff72aa;background:#ffffff08;border-radius:0 18px 18px 0}
+.envelope{font-size:90px;cursor:pointer;filter:drop-shadow(0 0 20px #ff5a9c66);transition:.3s}.envelope:hover{transform:scale(1.08)}
+.letter{display:none;text-align:left;margin-top:22px;padding:25px;border-radius:22px;background:#fff8;border:1px solid #ffffff25;color:#241522;line-height:1.8}
+.letter.show{display:block;animation:appear .6s ease}@keyframes appear{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+#final{display:none}.final-title{font-size:clamp(40px,11vw,90px);margin:12px 0}
+footer{text-align:center;padding:35px;color:#88798b;font-size:12px}
+.float{position:fixed;z-index:30;pointer-events:none;font-size:25px;animation:float 4s linear forwards}
+@keyframes float{to{transform:translateY(-110vh) rotate(240deg);opacity:0}}
+.confetti{position:fixed;width:8px;height:14px;top:-20px;z-index:40;animation:conf 3.5s linear forwards}
+@keyframes conf{to{transform:translateY(110vh) rotate(720deg);opacity:.1}}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas><div class="aurora"></div>
+
+<section>
+<div class="wrap">
+<div class="eyebrow">A tiny universe made for one special day</div>
+<h1>Arsmeen,<br>this is for you.</h1>
+<p class="hero-sub">Some birthdays deserve more than a simple “Happy Birthday.”<br>So… I made you a whole little world. ✨</p>
+<div class="date">06 • 10 • 2026 &nbsp;|&nbsp; SWEET 16</div>
+<button class="btn pink" onclick="party()">✨ Enter the Surprise</button>
+<button class="btn" onclick="go('birthday')">↓ Continue</button>
+</div>
+</section>
+
+<section id="birthday">
+<div class="wrap glass">
+<div class="eyebrow">Today is your day</div>
+<div class="age">16</div>
+<h2 style="font-size:34px;margin:25px 0 5px">Happy Birthday, Arsmeen! 🎂</h2>
+<p class="message">May your 16th year be filled with moments that make you laugh until your cheeks hurt, dreams that make you excited for tomorrow, and memories you will look back on with a smile.</p>
+<button class="btn pink" onclick="party()">🎉 Celebrate!</button>
+</div>
+</section>
+
+<section>
+<div class="wrap glass">
+<div class="eyebrow">A few birthday wishes</div>
+<h2 style="font-size:36px">For your new chapter 🌷</h2>
+<div class="reasons">
+<div class="reason">🌟<b>More Happiness</b><span>More little moments that make you smile.</span></div>
+<div class="reason">🌸<b>Beautiful Memories</b><span>Days worth remembering for years.</span></div>
+<div class="reason">✨<b>Big Dreams</b><span>Courage to keep chasing what matters.</span></div>
+</div>
+<div class="timeline">
+<div class="t"><b>Chapter 16 begins.</b><br>A brand-new year of possibilities starts today.</div>
+<div class="t"><b>Make it yours.</b><br>Laugh, learn, explore, and collect unforgettable moments.</div>
+<div class="t"><b>Keep shining.</b><br>There is only one Arsmeen—and that's pretty special.</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap glass">
+<div class="eyebrow">One last surprise</div>
+<h2 style="font-size:36px">Open the birthday letter 💌</h2>
+<div class="envelope" onclick="openLetter()">💌</div>
+<p style="color:#bdb0be">Tap the envelope</p>
+<div id="letter" class="letter">
+<h2>Dear Arsmeen,</h2>
+<p>I hope today reminds you just how many beautiful possibilities are ahead of you. Sixteen is the beginning of another chapter, and I hope it is filled with laughter, confidence, kindness, exciting adventures, and memories you will always treasure.</p>
+<p>Whatever this next year brings, I hope you keep your smile, keep dreaming, and keep being wonderfully yourself.</p>
+<p><b>Happy 16th Birthday, Arsmeen. 🎂💖</b></p>
+</div>
+</div>
+</section>
+
+<section id="final">
+<div class="wrap">
+<div class="eyebrow">06 October 2026</div>
+<div style="font-size:70px">🎂✨🎈</div>
+<div class="final-title">HAPPY 16TH,<br><span style="color:#ff8fbd">ARSMEEN!</span></div>
+<p class="hero-sub">May this chapter be your brightest one yet. 💗</p>
+<button class="btn pink" onclick="party()">💖 More Sparkles</button>
+</div>
+</section>
+<footer>Made especially for Arsmeen • Sweet 16</footer>
+
+<script>
+const c=document.getElementById("stars"),ctx=c.getContext("2d");let W,H,S=[];
+function size(){W=c.width=innerWidth*devicePixelRatio;H=c.height=innerHeight*devicePixelRatio;S=Array.from({length:170},()=>({x:Math.random()*W,y:Math.random()*H,r:.4+Math.random()*1.8,a:Math.random()*7}))}
+function draw(){ctx.clearRect(0,0,W,H);S.forEach(s=>{s.a+=.01;ctx.globalAlpha=.25+.5*Math.abs(Math.sin(s.a));ctx.fillStyle="#fff";ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,7);ctx.fill()});requestAnimationFrame(draw)}size();draw();onresize=size;
+
+function go(id){document.getElementById(id).scrollIntoView({behavior:"smooth"})}
+function party(){
+ for(let i=0;i<50;i++){let e=document.createElement("div");e.className="float";e.textContent=["💖","✨","🌸","🎈","⭐","💗"][Math.floor(Math.random()*6)];e.style.left=Math.random()*100+"vw";e.style.bottom="-30px";e.style.animationDuration=2+Math.random()*3+"s";document.body.appendChild(e);setTimeout(()=>e.remove(),5500)}
+ for(let i=0;i<90;i++){let e=document.createElement("i");e.className="confetti";e.style.left=Math.random()*100+"vw";e.style.background=["#ff6fae","#ffd166","#9b8cff","#7ee7d5","#fff"][Math.floor(Math.random()*5)];e.style.animationDelay=Math.random()*1.5+"s";document.body.appendChild(e);setTimeout(()=>e.remove(),5000)}
+}
+function openLetter(){document.getElementById("letter").classList.add("show");party()}
+</script>
+</body>
+</html>
